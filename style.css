@@ -1,0 +1,145 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.contain {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	overflow: hidden;
+}
+
+.circle {
+	position: absolute;
+	border: 1px solid blue;
+	border-radius: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 0;
+}
+
+.sun:hover,
+.water:hover,
+.gold:hover,
+.earth:hover,
+.fire:hover,
+.jupiter:hover,
+.soil:hover,
+.uranus:hover,
+.neptune:hover {
+	font-size: 16px;
+}
+
+.sun {
+	width: 100px;
+	height: 100px;
+	left: 50%;
+	background: url(img/sun.jpg) center/cover;
+}
+
+.trajectory {
+	position: absolute;
+	border: 1px solid;
+	border-radius: 50%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.travel1 {
+	width: 140px;
+	height: 140px;
+	border-color: orange;
+}
+.travel2 {
+	width: 220px;
+	height: 220px;
+	border-color: yellow;
+}
+.travel3 {
+	width: 320px;
+	height: 320px;
+	border-color: green;
+}
+.travel4 {
+	width: 400px;
+	height: 400px;
+	border-color: blue;
+}
+.travel5 {
+	width: 520px;
+	height: 520px;
+	border-color: gray;
+}
+.travel6 {
+	width: 680px;
+	height: 680px;
+	border-color: #03A9F4;
+}
+.travel7 {
+	width: 820px;
+	height: 820px;
+	border-color: #F403E4;
+}
+.travel8 {
+	width: 940px;
+	height: 940px;
+	border-color: #03CAF4;
+}
+
+.water {
+	width: 15px;
+	height: 15px;
+	left: calc(50% + 70px);
+	background: url(img/shuixing.jpg) center/cover;
+}
+
+.gold {
+	width: 30px;
+	height: 30px;
+	left: calc(50% + 110px);
+	background: url(img/jinxing.jpg) center/cover;
+}
+
+.earth {
+	width: 40px;
+	height: 40px;
+	left: calc(50% + 160px);
+	background: url(img/diqiu.jpg) center/cover;
+}
+
+.fire {
+	width: 20px;
+	height: 20px;
+	left: calc(50% + 200px);
+	background: url(img/huoxing.jpg) center/cover;
+}
+
+.jupiter {
+	width: 70px;
+	height: 70px;
+	left: calc(50% + 260px);
+	background: url(img/muxing.jpg) center/cover;
+}
+
+.soil {
+	width: 60px;
+	height: 60px;
+	left: calc(50% + 340px);
+	background: url(img/tuxing.jpg) center/cover;
+}
+
+.uranus {
+	width: 50px;
+	height: 50px;
+	left: calc(50% + 410px);
+	background: url(img/tianwang.jpg) center/cover;
+}
+
+.neptune {
+	width: 45px;
+	height: 45px;
+	left: calc(50% + 470px);
+	background: url(img/haiwang.jpg) center/cover;
+}
