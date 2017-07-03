@@ -11,8 +11,8 @@
 		{ name: "fire", time: 2, radius: 200 },
 		{ name: "jupiter", time: 12, radius: 260 },
 		{ name: "soil", time: 30, radius: 340 },
-		{ name: "neptune", time: 84, radius: 410 },
-		{ name: "uranus", time: 164, radius: 470 }
+		{ name: "uranus", time: 84, radius: 410 },
+		{ name: "neptune", time: 164, radius: 470 }
 	];
 
 	function travel(star, time, r) {
@@ -26,7 +26,6 @@
 			"left": x + "px",
 			"top": y + 'px'
 		});
-
 	}
 
 	function mouseOver(names) {
