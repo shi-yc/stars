@@ -5,7 +5,7 @@
 	var yearTime = 20 * 1000;
 	var message = [
 		{ name: "sun" },
-		{ name: "water", time: 0.15, radius: 70 },
+		{ name: "water", time: 0.2, radius: 70 },
 		{ name: "gold", time: 1.5, radius: 110 },
 		{ name: "earth", time: 1, radius: 160 },
 		{ name: "fire", time: 2, radius: 200 },
