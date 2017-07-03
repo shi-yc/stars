@@ -1,75 +1,51 @@
 	var centerx = window.innerWidth / 2;
 	var centery = window.innerHeight / 2;
-	var time1 = time2 = time3 = time4 = time5 = time5 = time6 = time7 =time8= 0;
 	var timeout = false;
+	var baseTime = 20;
+	var yearTime = 20 * 1000;
+	var message = [
+		{ name: "sun" },
+		{ name: "water", time: 0.15, radius: 70 },
+		{ name: "gold", time: 1.5, radius: 110 },
+		{ name: "earth", time: 1, radius: 160 },
+		{ name: "fire", time: 2, radius: 200 },
+		{ name: "jupiter", time: 12, radius: 260 },
+		{ name: "soil", time: 30, radius: 340 },
+		{ name: "neptune", time: 84, radius: 410 },
+		{ name: "uranus", time: 164, radius: 470 }
+	];
 
 	function travel(star, time, r) {
-		if (time == time1) {
-			time1 += 0.1;
-		} else if (time == time2) {
-			time2 += 0.1;
-		} else if (time == time3) {
-			time3 += 0.1;
-		} else if (time == time4) {
-			time4 += 0.1;
-		} else if (time == time5) {
-			time5 += 0.1;
-		} else if (time == time6) {
-			time6 += 0.1;
-		} else if (time == time7) {
-			time7 += 0.1;
-		} else {
-			time8 += 0.1;
-		}
-		var rad = (2 * Math.PI / 360) * 6 * time;
+		var disTime = Number($("." + star).attr('data-time'));
+		var rad = (2 * Math.PI) / (time * yearTime / baseTime);
+		rad += disTime;
+		$("." + star).attr('data-time', rad);
 		var x = centerx + Math.sin(rad) * r;
 		var y = centery - Math.cos(rad) * r;
 		$("." + star).css({
-			"left": x + 'px',
+			"left": x + "px",
 			"top": y + 'px'
-		}).mouseover(function() {
-			timeout = true;
-			$("span" + "." + star+"-t").prop('hidden', false);
-		}).mouseout(function() {
-			timeout = false;
-			$("span" + "." + star+"-t").prop('hidden', true);
-		});
-		$(".sun").mousemove(function(event) {
-			$("span.sun-t").prop('hidden', false);
-		}).mouseout(function(event) {
-			$("span.sun-t").prop('hidden', true);
 		});
 
 	}
+
+	function mouseOver(names) {
+		timeout = true;
+		$("span" + "." + names).prop('hidden', false);
+	}
+
+	function mouseOut(names) {
+		timeout = false;
+		$("span" + "." + names).prop('hidden', true);
+	}
 	setInterval(function() {
 		if (timeout) return;
-		travel("water", time1, 70)
-	}, 4.5);
-	setInterval(function() {
-		if (timeout) return;
-		travel("gold", time2, 110)
-	}, 45);
-	setInterval(function() {
-		if (timeout) return;
-		travel("earth", time3, 160)
-	}, 30);
-	setInterval(function() {
-		if (timeout) return;
-		travel("fire", time4, 200)
-	}, 60);
-	setInterval(function() {
-		if (timeout) return;
-		travel("jupiter", time5, 260)
-	}, 360);
-	setInterval(function() {
-		if (timeout) return;
-		travel("soil", time6, 340)
-	}, 900);
-	setInterval(function() {
-		if (timeout) return;
-		travel("uranus", time7, 410)
-	}, 2520);
-	setInterval(function() {
-		if (timeout) return;
-		travel("neptune", time8, 470)
-	}, 4820);
+		for (var i = 1; i < message.length; i++) {
+			travel(message[i].name, message[i].time, message[i].radius);
+		};
+	}, baseTime);
+	for (var i = 0; i < message.length; i++) {
+		(function(i) {
+			$("." + message[i].name).mousemove(function() { mouseOver(message[i].name + "-t") }).mouseout(function() { mouseOut(message[i].name + "-t") });
+		})(i);
+	};

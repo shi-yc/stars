@@ -92,9 +92,13 @@
 .neptune-t {
 	position: absolute;
 	top: 100px;
-	left: 90%;
-	width: 100px;
+	left: 85%;
+	width: 150px;
 	height: 100px;
+	background-color: #795FC9;
+	border-radius: 10%;
+	color: #fff;
+	padding: 13px;
 }
 
 .trajectory {
